@@ -30,7 +30,7 @@ namespace AkkaTCP.Config
             _service.AddSingleton<ISysAkkaManager>(p =>
             {
                 var appsetting = p.GetService<AppSetting>();       
-                var actSystem = ActorSystem.Create(appsetting.AkkaSysName);
+                var actSystem = ActorSystem.Create(appsetting.AkkaSysName, AkkaPara.Config("8999"));
                 actSystem.UseServiceProvider(p);
                 return new SysAkkaManager(actSystem);
             });

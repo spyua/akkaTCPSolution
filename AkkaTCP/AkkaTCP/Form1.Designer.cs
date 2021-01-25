@@ -29,13 +29,32 @@ namespace AkkaTCP
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.RichTextMsg = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // RichTextMsg
+            // 
+            this.RichTextMsg.Location = new System.Drawing.Point(45, 124);
+            this.RichTextMsg.Name = "RichTextMsg";
+            this.RichTextMsg.Size = new System.Drawing.Size(666, 373);
+            this.RichTextMsg.TabIndex = 0;
+            this.RichTextMsg.Text = "";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(766, 533);
+            this.Controls.Add(this.RichTextMsg);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox RichTextMsg;
     }
 }
 

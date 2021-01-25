@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AkkaSysBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,10 @@ namespace AkkaTCP
 {
     public partial class Form1 : Form
     {
-        public Form1()
+
+        private ISysAkkaManager _akkaManager;
+
+        public Form1(ISysAkkaManager akkaManager)
         {
             InitializeComponent();
         }

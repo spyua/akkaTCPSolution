@@ -16,6 +16,8 @@ namespace AkkaSysBase.Base
             ActorSystem = actorSystem;
         }
 
+        // Create
+
         public IActorRef CreateActor<T>() where T : ActorBase
         {
             return CreateActor<T>(() => ActorSystem);
@@ -40,6 +42,7 @@ namespace AkkaSysBase.Base
             return actor;
         }
 
+        // Get
         public IActorRef GetActor(string actName)
         {
             if (!_actorDics.ContainsKey(actName)) throw new ArgumentException($"It't doesn't has register Action {actName}");
@@ -50,5 +53,6 @@ namespace AkkaSysBase.Base
         {
             return ActorSystem.ActorSelection(actorPath);
         }
+
     }
 }
