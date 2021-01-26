@@ -32,7 +32,7 @@ namespace AkkaTCP
         private void StarFormApp()
         {
             var form = CreateMainForm();
-            form.Load += (o, e) => StarAkkaSys();
+            form.Shown += (o, e) => StarAkkaSys();
             Application.Run(form);
         }
 

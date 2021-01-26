@@ -20,7 +20,7 @@ namespace AkkaSysBase.Base
 
         protected override void PreStart()
         {
-            _log.I("AThread生命週期", _actorName + "PreStart");
+            //_log.I("AThread生命週期", _actorName + "PreStart");
             base.PreStart();
 
         }

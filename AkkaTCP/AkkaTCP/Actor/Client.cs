@@ -6,11 +6,16 @@ namespace AkkaTCP.Actor
 {
     public class Client : BaseClientActor
     {
-        
+
+      
         public Client(SysIP sysIP, ILog log) : base(sysIP, log)
         {
             ReceiveAny(message => RcvObject(message));
+
+     
         }
+
+
 
         private void RcvObject(object msg)
         {

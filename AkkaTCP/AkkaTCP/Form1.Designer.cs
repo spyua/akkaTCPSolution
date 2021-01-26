@@ -29,23 +29,25 @@ namespace AkkaTCP
         /// </summary>
         private void InitializeComponent()
         {
-            this.RichTextMsg = new System.Windows.Forms.RichTextBox();
+            this.RichTextBoxConsole = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // RichTextMsg
+            // RichTextBoxConsole
             // 
-            this.RichTextMsg.Location = new System.Drawing.Point(45, 124);
-            this.RichTextMsg.Name = "RichTextMsg";
-            this.RichTextMsg.Size = new System.Drawing.Size(666, 373);
-            this.RichTextMsg.TabIndex = 0;
-            this.RichTextMsg.Text = "";
+            this.RichTextBoxConsole.Location = new System.Drawing.Point(29, 81);
+            this.RichTextBoxConsole.Margin = new System.Windows.Forms.Padding(2);
+            this.RichTextBoxConsole.Name = "RichTextBoxConsole";
+            this.RichTextBoxConsole.Size = new System.Drawing.Size(426, 245);
+            this.RichTextBoxConsole.TabIndex = 0;
+            this.RichTextBoxConsole.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 533);
-            this.Controls.Add(this.RichTextMsg);
+            this.ClientSize = new System.Drawing.Size(488, 347);
+            this.Controls.Add(this.RichTextBoxConsole);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -54,7 +56,7 @@ namespace AkkaTCP
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox RichTextMsg;
+        private System.Windows.Forms.RichTextBox RichTextBoxConsole;
     }
 }
 
