@@ -3,14 +3,13 @@ using Akka.DI.Extensions.DependencyInjection;
 using Akka.Event;
 using AkkaSysBase;
 using AkkaSysBase.Base;
-using AkkaTCP.Actor;
-using AkkaTCP.Config;
 using LogSender;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net;
+using TcpWindowsForm.Actor;
 
-namespace AkkaTCP.Config
+namespace TcpWindowsForm.Config
 {
     public class SysDIService
     {
@@ -25,11 +24,11 @@ namespace AkkaTCP.Config
 
         public IServiceCollection Inject()
         {
-            _service.AddSingleton<Form1>();
             _service.AddSingleton<AppSetting>();
+            _service.AddSingleton<Form1>(); 
             _service.AddSingleton<ISysAkkaManager>(p =>
             {
-                var appsetting = p.GetService<AppSetting>();       
+                var appsetting = p.GetService<AppSetting>();
                 var actSystem = ActorSystem.Create(appsetting.AkkaSysName, AkkaPara.Config("8999"));
                 actSystem.UseServiceProvider(p);
                 return new SysAkkaManager(actSystem);
@@ -44,6 +43,18 @@ namespace AkkaTCP.Config
                 };
 
                 return new Client(ipPoint, GetLog<Client>(p, a => a.ClientLog));
+            });
+
+            _service.AddScoped(p =>
+            {
+                var appsetting = p.GetService<AppSetting>();
+                var ipPoint = new SysIP
+                {
+                    LocalIpEndPoint = new IPEndPoint(IPAddress.Parse(appsetting.LocalIp), appsetting.LocalPort),
+                    RemoteIpEndPoint = new IPEndPoint(IPAddress.Parse(appsetting.RemoteIp), appsetting.RemotePort)
+                };
+
+                return new Server(ipPoint, GetLog<Server>(p, a => a.ServerLog));
             });
 
             return _service;

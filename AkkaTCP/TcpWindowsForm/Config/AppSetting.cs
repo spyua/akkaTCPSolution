@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace AkkaTCP.Config
+namespace TcpWindowsForm.Config
 {
     public class AppSetting
     {
@@ -21,6 +21,7 @@ namespace AkkaTCP.Config
         public string RemoteIp { get; private set; }
         public int RemotePort { get; private set; }
         public string ClientLog { get; private set; }
+        public string ServerLog { get; private set; }
 
         public AppSetting()
         {
@@ -31,6 +32,7 @@ namespace AkkaTCP.Config
             RemotePort = GetAppConfigIntVaule("RemotePort");
 
             ClientLog = "ClientLog";
+            ServerLog = "ServerLog";
         }
 
         private string GetAppConfigValue(string value)

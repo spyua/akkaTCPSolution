@@ -1,11 +1,11 @@
-﻿using AkkaSysBase;
-using AkkaTCP.Actor;
-using AkkaTCP.Config;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using TcpWindowsForm.Config;
 using System.Windows.Forms;
+using TcpWindowsForm.Actor;
+using AkkaSysBase;
 
-namespace AkkaTCP
+namespace TcpWindowsForm
 {
     public class Bootstrapper
     {
@@ -41,6 +41,7 @@ namespace AkkaTCP
             // 建立與外部連結系統
             var akkaSys = _provider.GetService<ISysAkkaManager>();
             akkaSys.CreateActor<Client>();
+            akkaSys.CreateActor<Server>();
         }
 
         private Form CreateMainForm()

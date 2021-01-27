@@ -2,20 +2,14 @@
 using AkkaSysBase.Base;
 using LogSender;
 
-namespace AkkaTCP.Actor
+namespace TcpWindowsForm.Actor
 {
-    public class Client : BaseClientActor
+    public class Server : BaseServerActor
     {
-
-      
-        public Client(SysIP sysIP, ILog log) : base(sysIP, log)
+        public Server(SysIP sysIP, ILog log) : base(sysIP, log)
         {
             ReceiveAny(message => RcvObject(message));
-
-     
         }
-
-
 
         private void RcvObject(object msg)
         {
