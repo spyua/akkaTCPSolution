@@ -13,6 +13,27 @@ Demo Socket by Akka Framework with NLog and RichText Console speedly.
 <add key="RemotePort" value="7788" />
 ```
 
+# akkaTCPSolution
+
+For TCP/IP Communication by Akka framework solution.
+
+Demo Socket by Akka Framework with NLog and RichText Console speedly.
+
+## Setting IP Port Through App Config
+
+```
+<add key="LocalIP" value="127.0.0.1" />
+<add key="LocalPort" value="9105" />
+<add key="RemoteIP" value="127.0.0.1" />
+<add key="RemotePort" value="7788" />
+```
+
+## Setting Nlog File Path From Nlog Config
+
+```
+ <variable name="LogPath" value="D:\AkkaTcp"/>
+```
+
 ## Demo
 
 ### Client - Server
