@@ -234,6 +234,7 @@
     <Compile Include="Base\BaseActor.cs" />
     <Compile Include="Base\BaseClientActor.cs" />
     <Compile Include="Base\BaseServerActor.cs" />
+    <Compile Include="Def\TCPDef.cs" />
     <Compile Include="SysAkkaManager.cs" />
     <Compile Include="ISysAkkaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

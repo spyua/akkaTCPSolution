@@ -1,6 +1,7 @@
 ﻿using Akka.Actor;
 using Akka.IO;
 using LogSender;
+using System;
 
 namespace AkkaSysBase.Base
 {
@@ -15,6 +16,22 @@ namespace AkkaSysBase.Base
             Receive<Tcp.CommandFailed>(msg => TcpCommandFailed(msg));
             Receive<Tcp.ConnectionClosed>(message => TcpConnectionClosed(message));
             Receive<Tcp.Received>(message => TcpReceivedData(message));
+        }
+
+        protected override void PostStop()
+        {
+            base.PostStop();
+
+            if (Self != null)
+                Self.Tell(Tcp.Close.Instance);
+        }
+
+        protected override void PostRestart(Exception reason)
+        {
+            base.PostRestart(reason);
+
+            if (Self != null)
+                Self.Tell(Tcp.Close.Instance);
         }
 
         private void TcpBound(Tcp.Bound msg)
